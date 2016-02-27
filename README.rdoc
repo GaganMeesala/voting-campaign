@@ -1,28 +1,33 @@
-== README
+	Voting Campaign Project Steps To Implement
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Create a git repository in Github
+2. Clone the project
+3. Install the gems by typing bundle install in your terminal
+4. Setup ruby and rvmrc
+5. Add Postgresql Gem [ gem 'pg']
+6. Configure database in database.yml file
+7. Install the gems by typing bundle install in your terminal
+8. Create the database [rake db:create]
+9. Add Campaign Model and Vote Model
+    a. rails g model Campaign name:string
+    b. rails g model Vote choice:string validity:string
+10. Relationship 
+    a. Campaign has_many votes	
+    b. Votes belongs_to campaigns
+11. Add CampaignId to Votes to make relationship
+    a. rails g migration AddReferencesToVotes campaign:references
+12. Run migrations [rake db:migrate]
+13. Create seed data for campaigns [rake db:seed]
+14. Create the layout and view for displaying campaigns( Use Bootstrap)
+15. Read the text file(write logic) and create votes according to campaigns
+16. Seed the votes data into database [rake db:seed]
+17. Create the view and display candidates, scores, messages count etc.,
+18. Heroku
+    a. Create a app in heroku
+    b. Add remote to your application
+    c. Deploy the code
+    d. Configure database in heroku
+    e. Run the migrations
+    f. Seed the data into database
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+		Finished
