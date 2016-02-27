@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-xs-12 col-sm-12"></div>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <div id="mobile" class="p-t-30" style="text-align: center">
+        <h1><%= link_to 'Go back', root_path %> </h1>
+
+        <h3> Campaign Name: <%= @campaign.name %> </h3>
+        <h4>
+          Successful Votes : <%= @winning_votes.count %>
+        </h4>
+
+        <h4>
+          Failed Votes : <%= @losing_votes.count %>
+        </h4>
+
+        <h4>
+          Total Leaders : <%= @leader_details.count %>
+        </h4>
+
+        <% @leader_details.each do |leader| %>
+            <h5> <%= leader[0].choice %>: <%= leader.count %></h5>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-12"></div>
+  </div>
+</div>
