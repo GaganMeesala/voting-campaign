@@ -11,5 +11,15 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap.min
  *= require_self
  */
+
+#mobile {
+    height: 650px;
+    background-color: #ffffff;
+}
+
+.p-t-30 {
+    padding-top: 30px
+}
