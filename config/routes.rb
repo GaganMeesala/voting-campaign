@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'campaigns#index'
+
+  resources :campaigns, only: [:show] do
+    resources :votes, only: [:index]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

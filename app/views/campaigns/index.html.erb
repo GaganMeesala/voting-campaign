@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-xs-12 col-sm-12"></div>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <div id="mobile" class="p-t-30">
+        <h2 style="text-align: center"> All Campaigns </h2>
+        <% @campaigns.each do |campaign| %>
+            <center>
+              <p class="btn btn-info"><%= link_to campaign.name, campaign_votes_path(campaign) %></p>
+              <br>
+              <br>
+            </center>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-12"></div>
+  </div>
+</div>
