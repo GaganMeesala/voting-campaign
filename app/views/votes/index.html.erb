@@ -7,18 +7,18 @@
 
         <h3> Campaign Name: <%= @campaign.name %> </h3>
         <h4>
-          Successful Votes : <%= @winning_votes.count %>
+          Valid Votes : <%= @valid_votes.count %>
         </h4>
 
         <h4>
-          Failed Votes : <%= @losing_votes.count %>
+          Invalid Votes : <%= @invalid_votes.count %>
         </h4>
 
         <h4>
-          Total Leaders : <%= @leader_details.count %>
+          Leaders : <%= @leaders.count %>
         </h4>
 
-        <% @leader_details.each do |leader| %>
+        <% @leaders.each do |leader| %>
             <h5> <%= leader[0].choice %>: <%= leader.count %></h5>
         <% end %>
 

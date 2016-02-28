@@ -1,11 +1,12 @@
 class Vote < ActiveRecord::Base
   belongs_to :campaign
 
-  def self.get_leaders(winning_votes)
+  scope :valid_votes, ->(campaign_id) { where(campaign_id: campaign_id, validity: "during") }
+  scope :invalid_votes, ->(campaign_id) { where(campaign_id: campaign_id, validity: ["pre", "post"]) }
+
+  def self.get_leaders(valid_votes)
     leaders = []
-    winning_votes.each do |vote|
-      leaders << vote.choice
-    end
+    valid_votes.each { |vote| leaders << vote.choice }
     leaders.uniq
   end
 end
