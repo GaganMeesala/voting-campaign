@@ -2,7 +2,7 @@ class Vote < ActiveRecord::Base
   belongs_to :campaign
 
   scope :valid_votes, ->(campaign_id) { where(campaign_id: campaign_id, validity: "during") }
-  scope :invalid_votes, ->(campaign_id) { where(campaign_id: campaign_id, validity: ["pre", "post"]) }
+  scope :invalid_votes, ->(campaign_id) { where(campaign_id: campaign_id, validity: "pre") }
 
   def self.get_leaders(valid_votes)
     leaders = []
