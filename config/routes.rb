@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'campaigns#index'
-  get 'campaigns/:campaign_id/votes' => 'votes#index', as: :votes
+  resources :campaigns, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

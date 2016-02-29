@@ -6,7 +6,7 @@
         <h2 style="text-align: center"> All Campaigns </h2>
         <% @campaigns.each do |campaign| %>
             <center>
-              <p class="btn btn-info"><%= link_to campaign.name, votes_path(campaign) %></p>
+              <p class="btn btn-info"><%= link_to campaign.name, campaign_path(campaign) %></p>
               <br>
               <br>
             </center>
